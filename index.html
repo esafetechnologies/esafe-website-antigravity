@@ -114,7 +114,19 @@
 
       <ul class="nav-links">
         <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#services" class="nav-link">Services</a></li>
+        <li class="dropdown">
+          <a href="#services" class="nav-link dropdown-toggle">Services <svg class="dropdown-caret" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6" />
+            </svg></a>
+          <ul class="dropdown-menu">
+            <li><a href="blabs.html" class="dropdown-item">BLABS - Strategy</a></li>
+            <li><a href="evolve.html" class="dropdown-item">EVOLVE - Tech</a></li>
+            <li><a href="xplore.html" class="dropdown-item">XPLORE - Marketing</a></li>
+            <li><a href="elevate.html" class="dropdown-item">ELEVATE - HR</a></li>
+            <li><a href="ensure.html" class="dropdown-item">ENSURE - Finance</a></li>
+          </ul>
+        </li>
         <li><a href="#why-esafe" class="nav-link">Why ESafe</a></li>
         <li><a href="#process" class="nav-link">Process</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -196,7 +208,7 @@
 
         <!-- Right Column: Floating Cards -->
         <div class="hero-cards">
-          <div class="float-card card-blabs">
+          <a href="blabs.html" class="float-card card-blabs">
             <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M9 18h6" />
@@ -206,8 +218,8 @@
               </svg></div>
             <div class="card-div">BLABS</div>
             <div class="card-sub">Strategy &amp; Research</div>
-          </div>
-          <div class="float-card card-evolve">
+          </a>
+          <a href="evolve.html" class="float-card card-evolve">
             <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
@@ -215,8 +227,8 @@
               </svg></div>
             <div class="card-div">EVOLVE</div>
             <div class="card-sub">Tech Solutions</div>
-          </div>
-          <div class="float-card card-xplore">
+          </a>
+          <a href="xplore.html" class="float-card card-xplore">
             <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10" />
@@ -225,8 +237,8 @@
               </svg></div>
             <div class="card-div">XPLORE</div>
             <div class="card-sub">Marketing &amp; Brand</div>
-          </div>
-          <div class="float-card card-elevate">
+          </a>
+          <a href="elevate.html" class="float-card card-elevate">
             <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -236,8 +248,8 @@
               </svg></div>
             <div class="card-div">ELEVATE</div>
             <div class="card-sub">HR Management</div>
-          </div>
-          <div class="float-card card-ensure">
+          </a>
+          <a href="ensure.html" class="float-card card-ensure">
             <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="18" y1="20" x2="18" y2="10" />
@@ -246,7 +258,7 @@
               </svg></div>
             <div class="card-div">ENSURE</div>
             <div class="card-sub">Finance Solutions</div>
-          </div>
+          </a>
         </div>
       </div>
 
@@ -387,7 +399,8 @@
                   d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1.55.9 3.06 1.5 3.5.76.76 1.23 1.52 1.41 2.5" />
               </svg></div>
             <h4 class="service-division">BLABS</h4>
-            <h3 class="service-name">Strategy &amp; Research</h3>
+            <h3 class="service-name"><a href="blabs.html" class="inherit-color text-decoration-none">Strategy &amp;
+                Research</a></h3>
             <p class="service-desc">Comprehensive business blueprints, SWOT analysis, and lead generation to build a
               solid foundation.</p>
             <div class="service-tags">
@@ -395,6 +408,8 @@
               <span class="tag">Market Analysis</span>
               <span class="tag">KPIs</span>
             </div>
+            <a href="blabs.html" class="learn-more-link mt-3 display-inline-block text-teal font-weight-bold">Learn More
+              &rarr;</a>
           </div>
 
           <!-- Service 2 -->
@@ -406,7 +421,8 @@
                 <line x1="2" y1="20" x2="22" y2="20" />
               </svg></div>
             <h4 class="service-division">EVOLVE</h4>
-            <h3 class="service-name">Technology Solutions</h3>
+            <h3 class="service-name"><a href="evolve.html" class="inherit-color text-decoration-none">Technology
+                Solutions</a></h3>
             <p class="service-desc">Custom POS systems, robust ERPs, Web Development, and Mobile apps tailored to your
               scale.</p>
             <div class="service-tags">
@@ -415,6 +431,8 @@
               <span class="tag">ERP</span>
               <span class="tag">Mobile Apps</span>
             </div>
+            <a href="evolve.html" class="learn-more-link mt-3 display-inline-block text-teal font-weight-bold">Learn
+              More &rarr;</a>
           </div>
 
           <!-- Service 3 -->
@@ -427,7 +445,8 @@
                 <circle cx="12" cy="12" r="2" />
               </svg></div>
             <h4 class="service-division">XPLORE</h4>
-            <h3 class="service-name">Marketing &amp; Brand</h3>
+            <h3 class="service-name"><a href="xplore.html" class="inherit-color text-decoration-none">Marketing &amp;
+                Brand</a></h3>
             <p class="service-desc">Data-driven social media marketing, compelling video production, and unique brand
               identities.</p>
             <div class="service-tags">
@@ -435,6 +454,8 @@
               <span class="tag">Branding</span>
               <span class="tag">Video Ads</span>
             </div>
+            <a href="xplore.html" class="learn-more-link mt-3 display-inline-block text-teal font-weight-bold">Learn
+              More &rarr;</a>
           </div>
 
           <!-- Service 4 -->
@@ -448,7 +469,8 @@
                 <path d="M16 3.13a4 4 0 0 1 0 7.75" />
               </svg></div>
             <h4 class="service-division">ELEVATE</h4>
-            <h3 class="service-name">HR Management</h3>
+            <h3 class="service-name"><a href="elevate.html" class="inherit-color text-decoration-none">HR Management</a>
+            </h3>
             <p class="service-desc">Streamlined recruitment, corporate training, and modern HR management frameworks.
             </p>
             <div class="service-tags">
@@ -456,6 +478,8 @@
               <span class="tag">Training</span>
               <span class="tag">Contracting</span>
             </div>
+            <a href="elevate.html" class="learn-more-link mt-3 display-inline-block text-teal font-weight-bold">Learn
+              More &rarr;</a>
           </div>
 
           <!-- Service 5 -->
@@ -468,7 +492,8 @@
                 <line x1="6" y1="20" x2="6" y2="14" />
               </svg></div>
             <h4 class="service-division">ENSURE</h4>
-            <h3 class="service-name">Finance Solutions</h3>
+            <h3 class="service-name"><a href="ensure.html" class="inherit-color text-decoration-none">Finance
+                Solutions</a></h3>
             <p class="service-desc">Reliable bookkeeping, taxation advice, auditing, and strategic cash flow management.
             </p>
             <div class="service-tags">
@@ -476,6 +501,8 @@
               <span class="tag">Taxation</span>
               <span class="tag">Auditing</span>
             </div>
+            <a href="ensure.html" class="learn-more-link mt-3 display-inline-block text-teal font-weight-bold">Learn
+              More &rarr;</a>
           </div>
 
           <!-- Service CTA -->
@@ -862,11 +889,11 @@
         <div class="footer-col">
           <h4 class="footer-title">DIVISIONS</h4>
           <ul class="footer-links">
-            <li><a href="#services">BLABS</a></li>
-            <li><a href="#services">EVOLVE</a></li>
-            <li><a href="#services">XPLORE</a></li>
-            <li><a href="#services">ELEVATE</a></li>
-            <li><a href="#services">ENSURE</a></li>
+            <li><a href="blabs.html">BLABS</a></li>
+            <li><a href="evolve.html">EVOLVE</a></li>
+            <li><a href="xplore.html">XPLORE</a></li>
+            <li><a href="elevate.html">ELEVATE</a></li>
+            <li><a href="ensure.html">ENSURE</a></li>
           </ul>
         </div>
 

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <title>XPLORE - Marketing & Creative Solutions | ESafe Solutions</title>
+    <meta name="description"
+        content="XPLORE is the creative powerhouse of ESafe, building brands with social media, paid ads, video production, and strategy building.">
+    <meta name="keywords"
+        content="XPLORE, marketing solutions, creative solutions, branding, social media marketing, paid ads, video production">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Page specific styles */
+        .sector-header {
+            padding: 180px 0 100px;
+            background: linear-gradient(135deg, #1a0b2e, var(--navy));
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sector-header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at top left, rgba(255, 64, 129, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at bottom right, rgba(124, 77, 255, 0.2) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .sector-header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .sector-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 64, 129, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: #ff4081;
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .sector-header:hover .sector-icon {
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        .sector-title {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            font-family: var(--font-heading);
+        }
+
+        .sector-subtitle {
+            font-size: 1.5rem;
+            color: var(--teal-pale);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .sector-content {
+            padding: 100px 0;
+        }
+
+        .offerings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .offering-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px 0 20px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid #ff4081;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .offering-card:hover {
+            border-radius: 0 20px 0 20px;
+            box-shadow: 0 15px 40px rgba(255, 64, 129, 0.15);
+            transform: translateY(-8px);
+        }
+
+        .offering-title {
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 15px;
+            transition: color 0.3s;
+        }
+
+        .offering-card:hover .offering-title {
+            color: #ff4081;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <header id="header" class="scrolled">
+        <nav class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="navbar-logo.png" alt="ESafe Solutions" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li class="dropdown">
+                    <a href="index.html#services" class="nav-link dropdown-toggle">Services <svg class="dropdown-caret"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="blabs.html" class="dropdown-item">BLABS - Strategy</a></li>
+                        <li><a href="evolve.html" class="dropdown-item">EVOLVE - Tech</a></li>
+                        <li><a href="xplore.html" class="dropdown-item">XPLORE - Marketing</a></li>
+                        <li><a href="elevate.html" class="dropdown-item">ELEVATE - HR</a></li>
+                        <li><a href="ensure.html" class="dropdown-item">ENSURE - Finance</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#why-esafe" class="nav-link">Why ESafe</a></li>
+                <li><a href="index.html#process" class="nav-link">Process</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="index.html#contact" class="btn btn-primary btn-nav">Get Started &rarr;</a>
+                <button class="hamburger" aria-label="Menu">
+                    <span class="line line-1"></span>
+                    <span class="line line-2"></span>
+                    <span class="line line-3"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="sector-header">
+            <div class="container sector-header-content">
+                <div class="sector-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <circle cx="12" cy="12" r="6" />
+                        <circle cx="12" cy="12" r="2" />
+                    </svg>
+                </div>
+                <h1 class="sector-title">XPLORE</h1>
+                <p class="sector-subtitle">Marketing & Creative Solutions</p>
+            </div>
+        </section>
+
+        <section class="sector-content bg-light">
+            <div class="container">
+                <div class="about-grid"
+                    style="grid-template-columns: 1fr; max-width: 900px; margin: 0 auto; text-align: center;">
+                    <div class="about-content">
+                        <h2 class="section-title">Creative powerhouse of <span class="text-teal">ESafe</span></h2>
+                        <p class="section-desc">
+                            XPLORE is the creative and marketing powerhouse of ESafe. It builds brands that are
+                            recognized, stories that resonate, and campaigns that convert. From social media to paid
+                            ads, XPLORE drives visibility and growth.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="offerings-grid">
+                    <div class="offering-card">
+                        <h3 class="offering-title">Branding & Identity</h3>
+                        <p>Develop compelling brand identities and holistic strategy building that ensures your business
+                            stands out in the market.</p>
+                    </div>
+                    <div class="offering-card">
+                        <h3 class="offering-title">Social Media Marketing</h3>
+                        <p>Our top-performing offering (SM Marketing) delivering audience engagement, organic reach, and
+                            structured content planning.</p>
+                    </div>
+                    <div class="offering-card">
+                        <h3 class="offering-title">Video Production</h3>
+                        <p>High-quality professional video production, including branded animations and engaging
+                            explainer videos to tell your story.</p>
+                    </div>
+                    <div class="offering-card">
+                        <h3 class="offering-title">Paid Advertising</h3>
+                        <p>Data-driven paid ad campaigns designed and managed closely to maximize ROI and convert clicks
+                            into sustained engagement.</p>
+                    </div>
+                </div>
+
+                <div class="text-center" style="margin-top: 60px;">
+                    <a href="index.html#contact" class="btn btn-primary">Elevate Your Brand &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="logo-vertical-light.png" alt="ESafe Solutions" class="logo-img footer-logo">
+                    </a>
+                    <p class="footer-brand-desc">Sri Lanka's premier end-to-end business solutions partner. One roof.
+                        Zero guesswork.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">DIVISIONS</h4>
+                    <ul class="footer-links">
+                        <li><a href="blabs.html">BLABS</a></li>
+                        <li><a href="evolve.html">EVOLVE</a></li>
+                        <li><a href="xplore.html">XPLORE</a></li>
+                        <li><a href="elevate.html">ELEVATE</a></li>
+                        <li><a href="ensure.html">ENSURE</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">COMPANY</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#why-esafe">Why ESafe</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 ESafe Solutions (Pvt) Ltd</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
+
+</html>

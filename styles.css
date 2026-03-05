@@ -320,6 +320,77 @@ header.scrolled {
     gap: 20px;
 }
 
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--navy);
+    min-width: 200px;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+header.scrolled .dropdown-menu {
+    background-color: rgba(13, 27, 75, 0.95);
+    backdrop-filter: blur(20px);
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 10px 20px;
+    color: rgba(255, 255, 255, 0.75);
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.dropdown-item:hover {
+    color: var(--white);
+    background-color: rgba(0, 184, 169, 0.15);
+}
+
+.dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+}
+
+.dropdown-caret {
+    width: 14px;
+    height: 14px;
+    margin-left: 4px;
+    transition: transform 0.3s var(--ease-spring);
+}
+
+.dropdown:hover .dropdown-caret,
+.dropdown:focus-within .dropdown-caret {
+    transform: rotate(180deg);
+}
+
+.sector-title {
+    color: var(--white) !important;
+}
+
 /* BUTTONS */
 .btn {
     display: inline-flex;
@@ -1116,6 +1187,22 @@ header.scrolled {
     overflow: hidden;
     transition: background-color 0.4s var(--ease-smooth), box-shadow 0.4s var(--ease-smooth);
     z-index: 1;
+}
+
+/* Make card completely clickable */
+.learn-more-link {
+    display: inline-block;
+    margin-top: 24px;
+    position: static !important;
+    /* Ensures ::after overlays .service-card */
+}
+
+.learn-more-link::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    cursor: pointer;
 }
 
 .service-card::after {
