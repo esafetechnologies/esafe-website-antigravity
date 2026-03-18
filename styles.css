@@ -702,12 +702,15 @@ header.scrolled .dropdown-menu {
 .hero-badge {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    background-color: rgba(0, 184, 169, 0.08);
-    border: 1px solid rgba(0, 184, 169, 0.25);
-    border-radius: var(--radius-pill);
-    padding: 8px 18px;
+    gap: 12px;
+    background: linear-gradient(90deg, rgba(0, 184, 169, 0.15) 0%, rgba(255, 255, 255, 0.03) 100%);
+    border: 1px solid rgba(0, 184, 169, 0.3);
+    border-radius: 100px;
+    padding: 8px 24px;
     margin-bottom: 28px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 24px rgba(0, 184, 169, 0.12);
     animation: fadeInUp 0.6s var(--ease-smooth) 0.2s both;
 }
 
@@ -734,12 +737,11 @@ header.scrolled .dropdown-menu {
 }
 
 .badge-text {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 0.75rem;
-    color: var(--teal);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: var(--teal-pale);
+    letter-spacing: 0.5px;
 }
 
 .hero-headline {
@@ -2134,8 +2136,9 @@ header.scrolled .dropdown-menu {
     }
 
     .hero-headline {
-        font-size: 30px;
-        line-height: 1.15;
+        font-size: 24px;
+        line-height: 1.18;
+        letter-spacing: -0.01em;
     }
 
     .hero-container {
@@ -2176,6 +2179,8 @@ header.scrolled .dropdown-menu {
 
     .hero-cta .btn {
         min-height: 44px;
+        font-size: 0.82rem;
+        padding: 11px 22px;
     }
 
     .hero-stats {
@@ -2185,8 +2190,29 @@ header.scrolled .dropdown-menu {
 
     .hero-badge {
         align-self: center;
-        padding: 6px 14px;
-        font-size: 0.65rem;
+        padding: 6px 16px;
+        text-align: center;
+        border-radius: 50px;
+    }
+
+    .badge-text {
+        font-size: 0.75rem;
+        letter-spacing: 0.5px;
+        line-height: 1.4;
+    }
+
+    .hero-subtext {
+        font-size: 0.85rem;
+        line-height: 1.65;
+        margin-bottom: 28px;
+    }
+
+    .stat-number {
+        font-size: 1.4rem;
+    }
+
+    .stat-label {
+        font-size: 0.72rem;
     }
 
     .values-grid {
