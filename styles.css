@@ -2077,6 +2077,78 @@ header.scrolled .dropdown-menu {
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   LIGHT MODE & FLOATING TOGGLE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.theme-toggle-floating {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 10000;
+    background: rgba(0, 184, 169, 0.1);
+    border: 1px solid rgba(0, 184, 169, 0.3);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--teal);
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s var(--ease-smooth);
+}
+
+.theme-toggle-floating:hover {
+    background: var(--teal);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 184, 169, 0.3);
+}
+
+/* Light Mode Overrides for Home Page */
+body.light-mode .hero {
+    background-color: #f4f8f9; /* Light background */
+}
+
+body.light-mode .hero-headline,
+body.light-mode .hero-subtext,
+body.light-mode .stat-number,
+body.light-mode .stat-label {
+    color: var(--navy); /* Dark fonts */
+}
+
+body.light-mode .hero-bg-grid {
+    background-image:
+        linear-gradient(rgba(13, 27, 75, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(13, 27, 75, 0.05) 1px, transparent 1px);
+}
+
+body.light-mode .scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+body.light-mode .nav-link,
+body.light-mode .logo-text {
+    color: var(--navy);
+}
+
+body.light-mode .sector-header {
+    background-color: #f4f8f9;
+    color: var(--navy);
+}
+
+body.light-mode .sector-title,
+body.light-mode .sector-subtitle {
+    color: var(--navy);
+}
+
+body.light-mode .hamburger .line {
+    background-color: var(--navy);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    RESPONSIVE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 @media (max-width: 1024px) {

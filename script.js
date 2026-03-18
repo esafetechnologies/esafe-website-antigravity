@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initFormValidation();
     initHeroParallax();
     initInteractiveEffects();
+    initThemeToggle();
 });
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -163,6 +164,41 @@ function initFormValidation() {
                 successMsg.style.display = 'none';
             }, 6000);
         }
+    });
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   THEME TOGGLE ENGINE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+function initThemeToggle() {
+    const themeBtn = document.getElementById('themeToggle');
+    if (!themeBtn) return;
+
+    const sunIcon = themeBtn.querySelector('.sun-icon');
+    const moonIcon = themeBtn.querySelector('.moon-icon');
+
+    const updateIcons = (isLight) => {
+        if (isLight) {
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'block';
+        } else {
+            sunIcon.style.display = 'block';
+            moonIcon.style.display = 'none';
+        }
+    };
+
+    // Check localStorage
+    const savedTheme = localStorage.getItem('esafe_theme');
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
+        updateIcons(true);
+    }
+
+    themeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        localStorage.setItem('esafe_theme', isLight ? 'light' : 'dark');
+        updateIcons(isLight);
     });
 }
 
