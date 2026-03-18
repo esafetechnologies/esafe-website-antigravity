@@ -2215,8 +2215,28 @@ header.scrolled .dropdown-menu {
         font-size: 0.72rem;
     }
 
+    .about-badge {
+        right: -10px;
+        bottom: -15px;
+        padding: 14px 20px;
+    }
+
+    .ab-title {
+        font-size: 1.4rem;
+    }
+
     .values-grid {
         grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .value-chip {
+        padding: 10px 14px;
+        gap: 8px;
+    }
+
+    .value-chip .label {
+        font-size: 0.8rem;
     }
 
     .services-grid {
