@@ -97,19 +97,44 @@ function initStatsCounter() {
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 function initActiveNavAndTop() {
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links .nav-link');
+    const navLinks = document.querySelectorAll('.nav-links .nav-link, .nav-links .dropdown-item, .mobile-nav-links a');
     const backToTop = document.getElementById('backToTop');
 
+    // 1. Highlight based on current URL path
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+        
+        // Exact page match
+        if (href === currentPath || (currentPath === 'index.html' && href === './')) {
+            link.classList.add('active');
+            // If inside a dropdown, highlight the dropdown toggle too
+            const dropdown = link.closest('.dropdown');
+            if (dropdown) {
+                const toggle = dropdown.querySelector('.dropdown-toggle');
+                if (toggle) toggle.classList.add('active');
+            }
+        } else {
+            // Remove active just in case
+            link.classList.remove('active');
+        }
+    });
+
+    // 2. Scroll Spy (only applied to the current page's anchored sections)
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const id = entry.target.getAttribute('id');
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${id}`) {
-                        link.classList.add('active');
-                    }
-                });
+                // Target both desktop and mobile anchor links
+                const targetLinks = document.querySelectorAll(`.nav-links a[href="#${id}"], .nav-links a[href="index.html#${id}"], .mobile-nav-links a[href="#${id}"], .mobile-nav-links a[href="index.html#${id}"]`);
+                if (targetLinks.length > 0) {
+                    // Remove active from *other* anchor links first
+                    document.querySelectorAll('.nav-links a[href^="#"], .nav-links a[href^="index.html#"], .mobile-nav-links a[href^="#"], .mobile-nav-links a[href^="index.html#"]').forEach(l => l.classList.remove('active'));
+                    // Add active to the currently intersecting one
+                    targetLinks.forEach(l => l.classList.add('active'));
+                }
             }
         });
     }, { threshold: 0.5 });
