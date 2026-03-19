@@ -21,15 +21,26 @@
             position: relative;
             overflow: hidden;
         }
-
         .sector-header::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: repeating-linear-gradient(45deg, rgba(0, 229, 255, 0.03) 0px, rgba(0, 229, 255, 0.03) 2px, transparent 2px, transparent 15px);
+            background: repeating-linear-gradient(180deg, rgba(0, 229, 255, 0.0) 0%, rgba(0, 229, 255, 0.15) 50%, rgba(0, 229, 255, 0.0) 100%);
+            background-size: 100% 200%;
+            animation: data-stream 3s linear infinite;
             z-index: 0;
         }
-
+        @keyframes data-stream {
+            from { background-position: 0% -200%; }
+            to { background-position: 0% 200%; }
+        }
+        .sector-header::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: repeating-linear-gradient(90deg, transparent 0px, transparent 50px, rgba(0, 229, 255, 0.05) 50px, rgba(0, 229, 255, 0.05) 51px);
+            z-index: 0;
+        }
         .sector-header-content {
             position: relative;
             z-index: 1;
@@ -259,6 +270,7 @@
 </body>
 
 </html>
+
 
 
 

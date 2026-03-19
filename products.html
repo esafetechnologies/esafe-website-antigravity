@@ -40,31 +40,26 @@
             position: relative;
             overflow: hidden;
         }
-
         .sector-header::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background:
-                radial-gradient(circle at 30% 50%, rgba(0, 184, 169, 0.2) 0%, transparent 40%),
-                radial-gradient(circle at 70% 30%, rgba(33, 150, 243, 0.15) 0%, transparent 40%);
-            z-index: 0;
+            inset: 0;
+            background: repeating-linear-gradient(transparent, transparent 2px, rgba(0, 0, 0, 0.3) 2px, rgba(0, 0, 0, 0.3) 4px);
+            z-index: 1; pointer-events: none;
         }
-
         .sector-header::after {
             content: '';
             position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 30px 30px;
+            top: 0; left: 0; right: 0; height: 10px;
+            background: rgba(0, 229, 255, 0.6);
+            box-shadow: 0 0 30px 10px rgba(0, 229, 255, 0.3);
+            animation: scanline 4s linear infinite;
             z-index: 0;
         }
-
+        @keyframes scanline {
+            0% { top: -10%; }
+            100% { top: 110%; }
+        }
         .sector-header-content {
             position: relative;
             z-index: 1;
@@ -652,6 +647,7 @@
 </body>
 
 </html>
+
 
 
 

@@ -21,27 +21,30 @@
             position: relative;
             overflow: hidden;
         }
-
         .sector-header::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(90deg, rgba(76, 175, 80, 0.05) 1px, transparent 1px) 0 0 / 40px 40px,
-                linear-gradient(0deg, rgba(76, 175, 80, 0.05) 1px, transparent 1px) 0 0 / 40px 40px;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            transform: perspective(500px) rotateX(45deg) scale(1.5) translateY(-50px);
+            transform-origin: top center;
             z-index: 0;
-            animation: panGrid 20s linear infinite;
         }
-
-        @keyframes panGrid {
-            from {
-                background-position: 0 0;
-            }
-
-            to {
-                background-position: 40px 40px;
-            }
+        .sector-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: -100%; width: 50%; height: 4px;
+            background: linear-gradient(90deg, transparent, #00b8a9, transparent);
+            animation: upward-trend 3s ease-in-out infinite;
+            transform: rotate(-15deg);
+            box-shadow: 0 0 20px #00b8a9;
+            z-index: 0;
         }
-
+        @keyframes upward-trend {
+            from { left: -50%; bottom: 0; }
+            to { left: 150%; bottom: 200px; }
+        }
         .sector-header-content {
             position: relative;
             z-index: 1;
@@ -262,6 +265,7 @@
 </body>
 
 </html>
+
 
 
 

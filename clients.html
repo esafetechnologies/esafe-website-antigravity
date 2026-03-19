@@ -37,31 +37,21 @@
             position: relative;
             overflow: hidden;
         }
-
         .sector-header::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background:
-                radial-gradient(circle at 30% 50%, rgba(0, 184, 169, 0.2) 0%, transparent 40%),
-                radial-gradient(circle at 70% 30%, rgba(33, 150, 243, 0.15) 0%, transparent 40%);
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw; height: 100vw;
+            background: repeating-radial-gradient(circle, transparent 0, transparent 40px, rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 41px);
+            animation: expand-rings 10s linear infinite;
             z-index: 0;
         }
-
-        .sector-header::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 30px 30px;
-            z-index: 0;
+        @keyframes expand-rings {
+            from { width: 10px; height: 10px; opacity: 0; }
+            50% { opacity: 1; }
+            to { width: 150vw; height: 150vw; opacity: 0; }
         }
-
         .sector-header-content {
             position: relative;
             z-index: 1;
@@ -617,6 +607,7 @@
 </body>
 
 </html>
+
 
 
 
