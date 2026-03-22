@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.png" type="image/png">
-    <title>ELEVATE - HR Management Solutions | ESafe Solutions</title>
+    <title>Xplore - Marketing &amp; Brand | ESafe Solutions</title>
     <meta name="description"
-        content="ELEVATE ensures businesses have the right people and processes in place. We offer recruitment, training, and complete HR management solutions.">
+        content="Xplore - Marketing & Brand is the creative powerhouse of ESafe, building brands with social media, paid ads, video production, and strategy building.">
     <meta name="keywords"
-        content="ELEVATE, HR solutions, recruitment, training, contracting, management solutions, HR management, internship training">
+        content="Xplore - Marketing & Brand, marketing solutions, creative solutions, branding, social media marketing, paid ads, video production">
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Page specific styles */
         .sector-header {
             padding: 180px 0 100px;
-            background-color: #1a1525;
+            background: linear-gradient(135deg, #1a0b2e, var(--navy));
             color: var(--white);
             text-align: center;
             position: relative;
@@ -24,28 +24,23 @@
         .sector-header::before {
             content: '';
             position: absolute;
-            top: 20%; left: 10%;
-            width: 300px; height: 300px;
-            background: radial-gradient(circle, rgba(0, 184, 169, 0.3) 0%, transparent 70%);
-            animation: float-orb-1 8s ease-in-out infinite alternate;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 0, 150, 0.2) 0%, transparent 40%),
+                        radial-gradient(circle at 70% 70%, rgba(0, 229, 255, 0.2) 0%, transparent 40%);
+            animation: mesh-blob 10s ease-in-out infinite alternate;
             z-index: 0;
+        }
+        @keyframes mesh-blob {
+            0% { transform: scale(1) rotate(0deg); background-position: 0% 0%; }
+            100% { transform: scale(1.1) rotate(10deg); background-position: 10% 10%; }
         }
         .sector-header::after {
             content: '';
             position: absolute;
-            bottom: -10%; right: 10%;
-            width: 400px; height: 400px;
-            background: radial-gradient(circle, rgba(255, 167, 38, 0.2) 0%, transparent 70%);
-            animation: float-orb-2 10s ease-in-out infinite alternate-reverse;
+            inset: 0;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             z-index: 0;
-        }
-        @keyframes float-orb-1 {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(50px, -30px) scale(1.1); }
-        }
-        @keyframes float-orb-2 {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(-40px, -50px) scale(1.2); }
         }
         .sector-header-content {
             position: relative;
@@ -55,18 +50,18 @@
         .sector-icon {
             width: 80px;
             height: 80px;
-            background: rgba(255, 152, 0, 0.1);
-            border-radius: 24px;
+            background: rgba(255, 64, 129, 0.1);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 20px;
-            color: #ff9800;
-            transition: border-radius 0.3s ease;
+            color: #ff4081;
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .sector-header:hover .sector-icon {
-            border-radius: 50%;
+            transform: rotate(360deg) scale(1.1);
         }
 
         .sector-title {
@@ -96,21 +91,27 @@
         .offering-card {
             background: var(--white);
             padding: 40px;
-            border-radius: 12px;
+            border-radius: 20px 0 20px 0;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            border-top: 4px solid #ff9800;
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s;
+            border-top: 4px solid #ff4081;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .offering-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(255, 152, 0, 0.15);
+            border-radius: 0 20px 0 20px;
+            box-shadow: 0 15px 40px rgba(255, 64, 129, 0.15);
+            transform: translateY(-8px);
         }
 
         .offering-title {
             font-size: 1.5rem;
             color: var(--navy);
             margin-bottom: 15px;
+            transition: color 0.3s;
+        }
+
+        .offering-card:hover .offering-title {
+            color: #ff4081;
         }
     </style>
 </head>
@@ -134,11 +135,11 @@
                             <path d="m6 9 6 6 6-6" />
                         </svg></a>
                     <ul class="dropdown-menu">
-                        <li><a href="blabs.html" class="dropdown-item">BLABS - Strategy</a></li>
-                        <li><a href="evolve.html" class="dropdown-item">EVOLVE - Tech</a></li>
-                        <li><a href="xplore.html" class="dropdown-item">XPLORE - Marketing</a></li>
-                        <li><a href="elevate.html" class="dropdown-item">ELEVATE - HR</a></li>
-                        <li><a href="ensure.html" class="dropdown-item">ENSURE - Finance</a></li>
+                        <li><a href="strategy.html" class="dropdown-item">Business Labs - Strategy &amp; Research</a></li>
+                        <li><a href="technology.html" class="dropdown-item">Evolve - Technology Solutions</a></li>
+                        <li><a href="marketing.html" class="dropdown-item">Xplore - Marketing &amp; Brand</a></li>
+                        <li><a href="hr.html" class="dropdown-item">Elevate - HR Management</a></li>
+                        <li><a href="finance.html" class="dropdown-item">Ensure - Finance Solutions</a></li>
                     </ul>
                 </li>
                 <li><a href="products.html" class="nav-link">Products and Services</a></li>
@@ -162,14 +163,13 @@
                 <div class="sector-icon">
                     <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                         stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                        <circle cx="9" cy="7" r="4" />
-                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        <circle cx="12" cy="12" r="10" />
+                        <circle cx="12" cy="12" r="6" />
+                        <circle cx="12" cy="12" r="2" />
                     </svg>
                 </div>
-                <h1 class="sector-title">ELEVATE</h1>
-                <p class="sector-subtitle">Human Resource Management Solutions</p>
+                <h1 class="sector-title">Xplore - Marketing & Brand</h1>
+                <p class="sector-subtitle">Marketing & Creative Solutions</p>
             </div>
         </section>
 
@@ -177,43 +177,43 @@
             <div class="container">
                 <div class="about-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 50px; align-items: center;">
                     <div class="about-visuals reveal-right">
-                        <img src="esafe_hr.png" alt="Sector Image" style="width: 100%; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                        <img src="esafe_marketing.png" alt="Sector Image" style="width: 100%; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
                     </div>
                     <div class="about-content">
-                        <h2 class="section-title">Build teams that <span class="text-teal">drive</span> performance</h2>
+                        <h2 class="section-title">Creative powerhouse of <span class="text-teal">ESafe</span></h2>
                         <p class="section-desc">
-                            ELEVATE ensures businesses have the right people, processes, and training in place. It
-                            supports recruitment, workforce management, internship programs, and HR policy development —
-                            building teams that drive performance.
+                            Xplore - Marketing & Brand is the creative and marketing powerhouse of ESafe. It builds brands that are
+                            recognized, stories that resonate, and campaigns that convert. From social media to paid
+                            ads, Xplore - Marketing & Brand drives visibility and growth.
                         </p>
                     </div>
                 </div>
 
                 <div class="offerings-grid">
                     <div class="offering-card">
-                        <h3 class="offering-title">Recruitment & Contracting</h3>
-                        <p>End-to-end talent acquisition and contracting services to find the right fit for your unique
-                            business culture.</p>
+                        <h3 class="offering-title">Branding & Identity</h3>
+                        <p>Develop compelling brand identities and holistic strategy building that ensures your business
+                            stands out in the market.</p>
                     </div>
                     <div class="offering-card">
-                        <h3 class="offering-title">Corporate Training</h3>
-                        <p>Comprehensive training programs designed to upskill your existing team and ensure continuous
-                            professional development.</p>
+                        <h3 class="offering-title">Social Media Marketing</h3>
+                        <p>Our top-performing offering (SM Marketing) delivering audience engagement, organic reach, and
+                            structured content planning.</p>
                     </div>
                     <div class="offering-card">
-                        <h3 class="offering-title">Management Solutions</h3>
-                        <p>Streamlined HR management frameworks and performance review strategies tailored to growing
-                            businesses.</p>
+                        <h3 class="offering-title">Video Production</h3>
+                        <p>High-quality professional video production, including branded animations and engaging
+                            explainer videos to tell your story.</p>
                     </div>
                     <div class="offering-card">
-                        <h3 class="offering-title">Internship Programs</h3>
-                        <p>Structured internship training solutions bridging the gap between talent development and
-                            practical business contributions.</p>
+                        <h3 class="offering-title">Paid Advertising</h3>
+                        <p>Data-driven paid ad campaigns designed and managed closely to maximize ROI and convert clicks
+                            into sustained engagement.</p>
                     </div>
                 </div>
 
                 <div class="text-center" style="margin-top: 60px;">
-                    <a href="index.html#contact" class="btn btn-primary">Elevate Your Team &rarr;</a>
+                    <a href="index.html#contact" class="btn btn-primary">Elevate Your Brand &rarr;</a>
                 </div>
             </div>
         </section>
@@ -231,13 +231,13 @@
                         Zero guesswork.</p>
                 </div>
                 <div class="footer-col">
-                    <h4 class="footer-title">DIVISIONS</h4>
+                    <h4 class="footer-title">SERVICES</h4>
                     <ul class="footer-links">
-                        <li><a href="blabs.html">BLABS</a></li>
-                        <li><a href="evolve.html">EVOLVE</a></li>
-                        <li><a href="xplore.html">XPLORE</a></li>
-                        <li><a href="elevate.html">ELEVATE</a></li>
-                        <li><a href="ensure.html">ENSURE</a></li>
+                        <li><a href="strategy.html">Business Labs - Strategy & Research</a></li>
+                        <li><a href="technology.html">Evolve - Technology Solutions</a></li>
+                        <li><a href="marketing.html">Xplore - Marketing & Brand</a></li>
+                        <li><a href="hr.html">Elevate - HR Management</a></li>
+                        <li><a href="finance.html">Ensure - Finance Solutions</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

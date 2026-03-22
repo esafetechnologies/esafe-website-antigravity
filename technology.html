@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.png" type="image/png">
-    <title>BLABS - Business Research & Development | ESafe Solutions</title>
+    <title>Evolve - Technology Solutions | ESafe Solutions</title>
     <meta name="description"
-        content="BLABS is ESafe's strategic intelligence engine, providing business blueprints, SWOT analysis, KPIs, and market analysis for sustainable growth.">
+        content="Evolve - Technology Solutions delivers cutting-edge tech solutions tailored to business needs: ERP, POS, Web Development, Mobile Apps, and AI services.">
     <meta name="keywords"
-        content="BLABS, business blueprint, SWOT, KPI, lead generation, competitor analysis, market analysis, business consulting">
+        content="Evolve - Technology Solutions, technology solutions, ERP system, POS, web development, mobile application, E-Commerce, custom software, AI services">
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Page specific styles */
         .sector-header {
             padding: 180px 0 100px;
-            background-color: #0A1128;
+            background-color: #050b14;
             color: var(--white);
             text-align: center;
             position: relative;
@@ -25,22 +25,20 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: conic-gradient(from 0deg at 50% 50%, transparent 0%, rgba(0, 184, 169, 0.2) 30%, transparent 40%);
-            animation: radar-sweep 6s linear infinite;
+            background: repeating-linear-gradient(180deg, rgba(0, 229, 255, 0.0) 0%, rgba(0, 229, 255, 0.15) 50%, rgba(0, 229, 255, 0.0) 100%);
+            background-size: 100% 200%;
+            animation: data-stream 3s linear infinite;
             z-index: 0;
-            border-radius: 50%;
-            transform: scale(2);
         }
-        @keyframes radar-sweep {
-            from { transform: scale(2) rotate(0deg); }
-            to { transform: scale(2) rotate(360deg); }
+        @keyframes data-stream {
+            from { background-position: 0% -200%; }
+            to { background-position: 0% 200%; }
         }
         .sector-header::after {
             content: '';
             position: absolute;
             inset: 0;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-            background-size: 40px 40px;
+            background-image: repeating-linear-gradient(90deg, transparent 0px, transparent 50px, rgba(0, 229, 255, 0.05) 50px, rgba(0, 229, 255, 0.05) 51px);
             z-index: 0;
         }
         .sector-header-content {
@@ -51,13 +49,25 @@
         .sector-icon {
             width: 80px;
             height: 80px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 229, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 20px;
-            color: var(--teal);
+            color: #00e5ff;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+            animation: pulse-glow 2s infinite alternate;
+        }
+
+        @keyframes pulse-glow {
+            from {
+                box-shadow: 0 0 10px rgba(0, 229, 255, 0.1);
+            }
+
+            to {
+                box-shadow: 0 0 30px rgba(0, 229, 255, 0.4);
+            }
         }
 
         .sector-title {
@@ -87,15 +97,17 @@
         .offering-card {
             background: var(--white);
             padding: 40px;
-            border-radius: 12px;
+            border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            border-top: 4px solid var(--teal);
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #00e5ff;
+            border-bottom: 4px solid transparent;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
         }
 
         .offering-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0, 184, 169, 0.15);
+            transform: scale(1.03);
+            border-bottom: 4px solid #00e5ff;
+            box-shadow: 0 20px 40px rgba(0, 229, 255, 0.15);
         }
 
         .offering-title {
@@ -125,11 +137,11 @@
                             <path d="m6 9 6 6 6-6" />
                         </svg></a>
                     <ul class="dropdown-menu">
-                        <li><a href="blabs.html" class="dropdown-item">BLABS - Strategy</a></li>
-                        <li><a href="evolve.html" class="dropdown-item">EVOLVE - Tech</a></li>
-                        <li><a href="xplore.html" class="dropdown-item">XPLORE - Marketing</a></li>
-                        <li><a href="elevate.html" class="dropdown-item">ELEVATE - HR</a></li>
-                        <li><a href="ensure.html" class="dropdown-item">ENSURE - Finance</a></li>
+                        <li><a href="strategy.html" class="dropdown-item">Business Labs - Strategy &amp; Research</a></li>
+                        <li><a href="technology.html" class="dropdown-item">Evolve - Technology Solutions</a></li>
+                        <li><a href="marketing.html" class="dropdown-item">Xplore - Marketing &amp; Brand</a></li>
+                        <li><a href="hr.html" class="dropdown-item">Elevate - HR Management</a></li>
+                        <li><a href="finance.html" class="dropdown-item">Ensure - Finance Solutions</a></li>
                     </ul>
                 </li>
                 <li><a href="products.html" class="nav-link">Products and Services</a></li>
@@ -153,14 +165,12 @@
                 <div class="sector-icon">
                     <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                         stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M9 18h6" />
-                        <path d="M10 22h4" />
-                        <path
-                            d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1.55.9 3.06 1.5 3.5.76.76 1.23 1.52 1.41 2.5" />
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                        <line x1="2" y1="20" x2="22" y2="20" />
                     </svg>
                 </div>
-                <h1 class="sector-title">BLABS</h1>
-                <p class="sector-subtitle">Business Research & Development Solutions</p>
+                <h1 class="sector-title">Evolve - Technology Solutions</h1>
+                <p class="sector-subtitle">Evolve - Technology Solutions</p>
             </div>
         </section>
 
@@ -168,43 +178,44 @@
             <div class="container">
                 <div class="about-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 50px; align-items: center;">
                     <div class="about-visuals reveal-right">
-                        <img src="esafe_strategy.png" alt="Sector Image" style="width: 100%; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                        <img src="esafe_tech.png" alt="Sector Image" style="width: 100%; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
                     </div>
                     <div class="about-content">
-                        <h2 class="section-title">Strategic intelligence <span class="text-teal">engine</span></h2>
+                        <h2 class="section-title">Cutting-edge <span class="text-teal">technology</span> built for you
+                        </h2>
                         <p class="section-desc">
-                            BLABS is ESafe's strategic intelligence engine. It helps businesses understand their market,
-                            define their path, and build the operational foundations needed for growth. From SWOT
-                            analysis to KPI frameworks, BLABS turns uncertainty into clarity.
+                            Evolve - Technology Solutions delivers cutting-edge technology solutions tailored to business needs. Whether it's a
+                            custom ERP system, a mobile application, or AI-powered automation, Evolve - Technology Solutions transforms manual
+                            processes into smart, scalable digital systems.
                         </p>
                     </div>
                 </div>
 
                 <div class="offerings-grid">
                     <div class="offering-card">
-                        <h3 class="offering-title">Business Blueprint</h3>
-                        <p>Comprehensive business planning, including actionable SWOT analyses and strategic roadmaps to
-                            guide your growth.</p>
+                        <h3 class="offering-title">ERP & POS Systems</h3>
+                        <p>End-to-end Enterprise Resource Planning and Point of Sale systems to streamline your
+                            operations tailored to your business scale.</p>
                     </div>
                     <div class="offering-card">
-                        <h3 class="offering-title">BPMN & KPIs</h3>
-                        <p>Business Process Model and Notation (BPMN) mapping alongside robust Key Performance
-                            Indicators (KPIs) to measure success.</p>
+                        <h3 class="offering-title">Web & E-Commerce</h3>
+                        <p>High-performance, responsive websites and robust e-commerce platforms designed to convert
+                            visitors into customers.</p>
                     </div>
                     <div class="offering-card">
-                        <h3 class="offering-title">Market Analysis</h3>
-                        <p>In-depth competitor and market analysis to identify opportunities, threats, and your unique
-                            market positioning.</p>
+                        <h3 class="offering-title">Mobile Applications</h3>
+                        <p>Cross-platform and native mobile app development offering seamless, interactive experiences
+                            for your users.</p>
                     </div>
                     <div class="offering-card">
-                        <h3 class="offering-title">Growth Strategy</h3>
-                        <p>Expert consultation on pricing, distribution strategies, and lead generation approaches to
-                            scale effectively.</p>
+                        <h3 class="offering-title">Automation & AI</h3>
+                        <p>Forward-thinking automation and AI services including custom CRM, School Management, LMS, and
+                            workflow optimization.</p>
                     </div>
                 </div>
 
                 <div class="text-center" style="margin-top: 60px;">
-                    <a href="index.html#contact" class="btn btn-primary">Discuss Your Strategy &rarr;</a>
+                    <a href="index.html#contact" class="btn btn-primary">Upgrade Your Tech Stack &rarr;</a>
                 </div>
             </div>
         </section>
@@ -223,13 +234,13 @@
                         guesswork.</p>
                 </div>
                 <div class="footer-col">
-                    <h4 class="footer-title">DIVISIONS</h4>
+                    <h4 class="footer-title">SERVICES</h4>
                     <ul class="footer-links">
-                        <li><a href="blabs.html">BLABS</a></li>
-                        <li><a href="evolve.html">EVOLVE</a></li>
-                        <li><a href="xplore.html">XPLORE</a></li>
-                        <li><a href="elevate.html">ELEVATE</a></li>
-                        <li><a href="ensure.html">ENSURE</a></li>
+                        <li><a href="strategy.html">Business Labs - Strategy & Research</a></li>
+                        <li><a href="technology.html">Evolve - Technology Solutions</a></li>
+                        <li><a href="marketing.html">Xplore - Marketing & Brand</a></li>
+                        <li><a href="hr.html">Elevate - HR Management</a></li>
+                        <li><a href="finance.html">Ensure - Finance Solutions</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

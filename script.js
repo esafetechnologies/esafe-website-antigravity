@@ -12,8 +12,89 @@ document.addEventListener('DOMContentLoaded', () => {
     initFormValidation();
     initHeroParallax();
     initInteractiveEffects();
-    initThemeToggle();
+    initOrbitFlipping();
 });
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ORBIT FLIPPING LOGIC
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+function initOrbitFlipping() {
+    const scaler = document.querySelector('.circle-scaler');
+    const circle = document.querySelector('.circle-container');
+    const cards = document.querySelectorAll('.float-card');
+    if (!cards.length || !circle || !scaler) return;
+
+    let currentAngle = 0;
+    let targetAngle = 0;
+    
+    // Ambient slow rotation
+    let autoSpinInterval = setInterval(() => {
+        targetAngle += 0.2;
+    }, 16);
+
+    // Scroll-driven rotation (Swipe Ups spin it)
+    let lastScrollY = window.scrollY;
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.scrollY;
+        const dy = currentScroll - lastScrollY;
+        lastScrollY = currentScroll;
+        // Scroll down (dy > 0) -> rotates forward
+        targetAngle += dy * 0.35;
+    });
+
+    const heroCards = document.querySelector('.hero-cards');
+    if (heroCards) {
+        // Pause auto rotation on hover, resume on leave
+        heroCards.addEventListener('mouseenter', () => clearInterval(autoSpinInterval));
+        heroCards.addEventListener('mouseleave', () => {
+            autoSpinInterval = setInterval(() => {
+                targetAngle += 0.2;
+            }, 16);
+        });
+    }
+
+    function renderOrbit() {
+        // Smooth LERP (Make it smooth)
+        currentAngle += (targetAngle - currentAngle) * 0.08;
+        
+        // Apply synchronized counter-rotations
+        circle.style.transform = `rotate(${currentAngle}deg)`;
+        cards.forEach(card => {
+            card.style.transform = `rotate(${-currentAngle}deg)`;
+        });
+
+        // Determine which card is physically closest to the bottom front axis
+        let maxTop = -Infinity;
+        let frontCard = null;
+
+        cards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            // The card visually lowest on the screen has the highest rect.top
+            if (rect.top > maxTop) {
+                maxTop = rect.top;
+                frontCard = card;
+            }
+        });
+
+        const isAnyHovered = Array.from(cards).some(c => c.matches(':hover'));
+
+        cards.forEach(card => {
+            if (isAnyHovered) {
+                card.classList.remove('flipped'); // Give control to hover interactions
+            } else {
+                if (card === frontCard) {
+                    card.classList.add('flipped');
+                } else {
+                    card.classList.remove('flipped');
+                }
+            }
+        });
+
+        requestAnimationFrame(renderOrbit);
+    }
+
+    requestAnimationFrame(renderOrbit);
+}
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    HERO CURSOR PARALLAX
@@ -192,40 +273,6 @@ function initFormValidation() {
     });
 }
 
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   THEME TOGGLE ENGINE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-function initThemeToggle() {
-    const themeBtn = document.getElementById('themeToggle');
-    if (!themeBtn) return;
-
-    const sunIcon = themeBtn.querySelector('.sun-icon');
-    const moonIcon = themeBtn.querySelector('.moon-icon');
-
-    const updateIcons = (isLight) => {
-        if (isLight) {
-            sunIcon.style.display = 'none';
-            moonIcon.style.display = 'block';
-        } else {
-            sunIcon.style.display = 'block';
-            moonIcon.style.display = 'none';
-        }
-    };
-
-    // Check localStorage
-    const savedTheme = localStorage.getItem('esafe_theme');
-    if (savedTheme === 'light') {
-        document.body.classList.add('light-mode');
-        updateIcons(true);
-    }
-
-    themeBtn.addEventListener('click', () => {
-        document.body.classList.toggle('light-mode');
-        const isLight = document.body.classList.contains('light-mode');
-        localStorage.setItem('esafe_theme', isLight ? 'light' : 'dark');
-        updateIcons(isLight);
-    });
-}
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    HERO CANVAS ENGINE

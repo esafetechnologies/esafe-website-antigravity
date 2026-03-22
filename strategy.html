@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.png" type="image/png">
-    <title>ENSURE - Finance Solutions | ESafe Solutions</title>
+    <title>Business Labs - Strategy & Research - Business Research & Development | ESafe Solutions</title>
     <meta name="description"
-        content="ENSURE provides financial clarity and compliance. From accounting and auditing to taxation and investment management.">
+        content="Business Labs - Strategy & Research is ESafe's strategic intelligence engine, providing business blueprints, SWOT analysis, KPIs, and market analysis for sustainable growth.">
     <meta name="keywords"
-        content="ENSURE, finance solutions, accounting, taxation, auditing, investment management, cash flow management">
+        content="Business Labs - Strategy & Research, business blueprint, SWOT, KPI, lead generation, competitor analysis, market analysis, business consulting">
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Page specific styles */
         .sector-header {
             padding: 180px 0 100px;
-            background-color: #0d1b2a;
+            background-color: #0A1128;
             color: var(--white);
             text-align: center;
             position: relative;
@@ -25,25 +25,23 @@
             content: '';
             position: absolute;
             inset: 0;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-            background-size: 50px 50px;
-            transform: perspective(500px) rotateX(45deg) scale(1.5) translateY(-50px);
-            transform-origin: top center;
+            background: conic-gradient(from 0deg at 50% 50%, transparent 0%, rgba(0, 184, 169, 0.2) 30%, transparent 40%);
+            animation: radar-sweep 6s linear infinite;
             z-index: 0;
+            border-radius: 50%;
+            transform: scale(2);
+        }
+        @keyframes radar-sweep {
+            from { transform: scale(2) rotate(0deg); }
+            to { transform: scale(2) rotate(360deg); }
         }
         .sector-header::after {
             content: '';
             position: absolute;
-            bottom: 0; left: -100%; width: 50%; height: 4px;
-            background: linear-gradient(90deg, transparent, #00b8a9, transparent);
-            animation: upward-trend 3s ease-in-out infinite;
-            transform: rotate(-15deg);
-            box-shadow: 0 0 20px #00b8a9;
+            inset: 0;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
             z-index: 0;
-        }
-        @keyframes upward-trend {
-            from { left: -50%; bottom: 0; }
-            to { left: 150%; bottom: 200px; }
         }
         .sector-header-content {
             position: relative;
@@ -53,13 +51,13 @@
         .sector-icon {
             width: 80px;
             height: 80px;
-            background: rgba(76, 175, 80, 0.1);
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 20px;
-            color: #4caf50;
+            color: var(--teal);
         }
 
         .sector-title {
@@ -89,27 +87,21 @@
         .offering-card {
             background: var(--white);
             padding: 40px;
-            border-radius: 0;
+            border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            border-top: 4px solid #4caf50;
-            transition: background-color 0.4s, color 0.4s, transform 0.3s;
+            border-top: 4px solid var(--teal);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .offering-card:hover {
-            background-color: #4caf50;
-            color: var(--white);
             transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 184, 169, 0.15);
         }
 
         .offering-title {
             font-size: 1.5rem;
             color: var(--navy);
             margin-bottom: 15px;
-            transition: color 0.4s;
-        }
-
-        .offering-card:hover .offering-title {
-            color: var(--white);
         }
     </style>
 </head>
@@ -133,11 +125,11 @@
                             <path d="m6 9 6 6 6-6" />
                         </svg></a>
                     <ul class="dropdown-menu">
-                        <li><a href="blabs.html" class="dropdown-item">BLABS - Strategy</a></li>
-                        <li><a href="evolve.html" class="dropdown-item">EVOLVE - Tech</a></li>
-                        <li><a href="xplore.html" class="dropdown-item">XPLORE - Marketing</a></li>
-                        <li><a href="elevate.html" class="dropdown-item">ELEVATE - HR</a></li>
-                        <li><a href="ensure.html" class="dropdown-item">ENSURE - Finance</a></li>
+                        <li><a href="strategy.html" class="dropdown-item">Business Labs - Strategy &amp; Research</a></li>
+                        <li><a href="technology.html" class="dropdown-item">Evolve - Technology Solutions</a></li>
+                        <li><a href="marketing.html" class="dropdown-item">Xplore - Marketing &amp; Brand</a></li>
+                        <li><a href="hr.html" class="dropdown-item">Elevate - HR Management</a></li>
+                        <li><a href="finance.html" class="dropdown-item">Ensure - Finance Solutions</a></li>
                     </ul>
                 </li>
                 <li><a href="products.html" class="nav-link">Products and Services</a></li>
@@ -161,13 +153,14 @@
                 <div class="sector-icon">
                     <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                         stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="20" x2="18" y2="10" />
-                        <line x1="12" y1="20" x2="12" y2="4" />
-                        <line x1="6" y1="20" x2="6" y2="14" />
+                        <path d="M9 18h6" />
+                        <path d="M10 22h4" />
+                        <path
+                            d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1.55.9 3.06 1.5 3.5.76.76 1.23 1.52 1.41 2.5" />
                     </svg>
                 </div>
-                <h1 class="sector-title">ENSURE</h1>
-                <p class="sector-subtitle">Finance Solutions</p>
+                <h1 class="sector-title">Business Labs - Strategy & Research</h1>
+                <p class="sector-subtitle">Business Research & Development Solutions</p>
             </div>
         </section>
 
@@ -175,43 +168,43 @@
             <div class="container">
                 <div class="about-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 50px; align-items: center;">
                     <div class="about-visuals reveal-right">
-                        <img src="esafe_finance.png" alt="Sector Image" style="width: 100%; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                        <img src="esafe_strategy.png" alt="Sector Image" style="width: 100%; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
                     </div>
                     <div class="about-content">
-                        <h2 class="section-title">Financial clarity and <span class="text-teal">compliance</span></h2>
+                        <h2 class="section-title">Strategic intelligence <span class="text-teal">engine</span></h2>
                         <p class="section-desc">
-                            ENSURE provides financial clarity and compliance. From accounting and auditing to taxation
-                            and investment management, ENSURE gives businesses the financial backbone they need to make
-                            confident decisions.
+                            Business Labs - Strategy & Research is ESafe's strategic intelligence engine. It helps businesses understand their market,
+                            define their path, and build the operational foundations needed for growth. From SWOT
+                            analysis to KPI frameworks, Business Labs - Strategy & Research turns uncertainty into clarity.
                         </p>
                     </div>
                 </div>
 
                 <div class="offerings-grid">
                     <div class="offering-card">
-                        <h3 class="offering-title">Accounting & Auditing</h3>
-                        <p>Reliable bookkeeping and thorough auditing processes to maintain clear and accurate financial
-                            records.</p>
+                        <h3 class="offering-title">Business Blueprint</h3>
+                        <p>Comprehensive business planning, including actionable SWOT analyses and strategic roadmaps to
+                            guide your growth.</p>
                     </div>
                     <div class="offering-card">
-                        <h3 class="offering-title">Taxation Advice</h3>
-                        <p>Expert consultation on tax strategies and ensuring strict corporate tax compliance and
-                            optimization.</p>
+                        <h3 class="offering-title">BPMN & KPIs</h3>
+                        <p>Business Process Model and Notation (BPMN) mapping alongside robust Key Performance
+                            Indicators (KPIs) to measure success.</p>
                     </div>
                     <div class="offering-card">
-                        <h3 class="offering-title">Investment Management</h3>
-                        <p>Strategic portfolio and investment management to enhance and secure your business's capital
-                            growth.</p>
+                        <h3 class="offering-title">Market Analysis</h3>
+                        <p>In-depth competitor and market analysis to identify opportunities, threats, and your unique
+                            market positioning.</p>
                     </div>
                     <div class="offering-card">
-                        <h3 class="offering-title">Cash Flow Control</h3>
-                        <p>Detailed reporting and strategic cash flow management ensuring your operational liquidity is
-                            securely maintained.</p>
+                        <h3 class="offering-title">Growth Strategy</h3>
+                        <p>Expert consultation on pricing, distribution strategies, and lead generation approaches to
+                            scale effectively.</p>
                     </div>
                 </div>
 
                 <div class="text-center" style="margin-top: 60px;">
-                    <a href="index.html#contact" class="btn btn-primary">Secure Your Finances &rarr;</a>
+                    <a href="index.html#contact" class="btn btn-primary">Discuss Your Strategy &rarr;</a>
                 </div>
             </div>
         </section>
@@ -226,16 +219,17 @@
                         <img src="logo-vertical-light.png" alt="ESafe Solutions" class="logo-img footer-logo">
                     </a>
                     <p class="footer-brand-desc">Sri Lanka's premier end-to-end business solutions partner. One roof.
-                        Zero guesswork.</p>
+                        Zero
+                        guesswork.</p>
                 </div>
                 <div class="footer-col">
-                    <h4 class="footer-title">DIVISIONS</h4>
+                    <h4 class="footer-title">SERVICES</h4>
                     <ul class="footer-links">
-                        <li><a href="blabs.html">BLABS</a></li>
-                        <li><a href="evolve.html">EVOLVE</a></li>
-                        <li><a href="xplore.html">XPLORE</a></li>
-                        <li><a href="elevate.html">ELEVATE</a></li>
-                        <li><a href="ensure.html">ENSURE</a></li>
+                        <li><a href="strategy.html">Business Labs - Strategy & Research</a></li>
+                        <li><a href="technology.html">Evolve - Technology Solutions</a></li>
+                        <li><a href="marketing.html">Xplore - Marketing & Brand</a></li>
+                        <li><a href="hr.html">Elevate - HR Management</a></li>
+                        <li><a href="finance.html">Ensure - Finance Solutions</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
